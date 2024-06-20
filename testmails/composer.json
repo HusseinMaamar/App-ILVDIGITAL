@@ -1,0 +1,21 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.0",
+        "bacon/bacon-qr-code": "^1.0",
+        "tecnickcom/tcpdf": "^6.0",
+        "setasign/fpdi": "^2.0",
+        "setasign/fpdf": "^1.0",
+        "setasign/fpdi_pdf-parser": "2.1.0",
+        "google/cloud-recaptcha-enterprise": "*"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://www.setasign.com/downloads/"
+        }
+    ],
+    
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "proprietary"
+}

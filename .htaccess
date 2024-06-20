@@ -1,0 +1,46 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /app.ilvdigital/
+
+# Réécriture pour l'activation avec token
+RewriteRule "^qrCode/(.+)" "/app.ilvdigital/?action=qrCode&token=$1" [R,L]
+
+# Réécriture pour mailTo avec token
+RewriteRule "^mailTo/(.+)" "/app.ilvdigital/?action=mailTo&token=$1" [L]
+
+# Réécriture pour l'activation sans tekon
+RewriteRule ^qrCode$ /app.ilvdigital/?action=qrCode [L]
+
+# Réécriture pour l'activation sans tekon
+RewriteRule ^mailTo$ /app.ilvdigital/?action=mailTo [L]
+
+# Réécriture pour l'activation sans tekon
+RewriteRule ^join$ /app.ilvdigital/?action=join [L]
+# Réécriture pour tableau de bord
+RewriteRule ^dashboard$ /app.ilvdigital/?action=dash [L]
+
+# Réécriture pour compte client
+RewriteRule ^account$ /app.ilvdigital/?action=account [L]
+
+# Réécriture pour telechargment admin
+RewriteRule ^download$ /app.ilvdigital/?action=download [L]
+
+
+# Réécriture pour passwordreset demande de nouveau mot de passe
+RewriteRule ^ForgotPassword$ /app.ilvdigital/?action=passwordreset [L]
+
+# Réécriture pour l'action newPassword avec token
+RewriteRule ^newPassword/([^/]+)$ /app.ilvdigital/?action=newPassword&token=$1 [L]
+
+# Réécriture pour l'action newPassword avec token
+RewriteRule ^validationemail/([^/]+)$ /app.ilvdigital/?action=validationemail&token=$1 [L]
+
+# Réécriture pour déconnexion
+RewriteRule ^logout$ /app.ilvdigital/?action=logout [L]
+
+</IfModule>
+
+# Réécriture pour la page 404
+ErrorDocument 404 /app.ilvdigital/?action=handle404
+

@@ -1,0 +1,43 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
+RewriteEngine On
+
+# Réécriture pour l'activation sans tekon
+RewriteRule ^join$ /?action=join [L]
+
+# Réécriture pour l'activation sans tekon
+RewriteRule ^qrCode$ /?action=qrCode [L]
+
+# Réécriture pour tableau de bord
+RewriteRule ^dashboard$ /?action=dash [L]
+
+# Réécriture pour compte client
+RewriteRule ^account$ /?action=account [L]
+
+# Réécriture pour telechargment admin
+RewriteRule ^download$ /?action=download [L]
+
+# Réécriture pour l'activation
+RewriteRule ^qrCode/([^/]+)$ /?action=qrCode&token=$1 [L]
+
+# Réécriture pour passwordreset demande de nouveau mot de passe
+RewriteRule ^ForgotPassword$ /?action=passwordreset [L]
+
+# Réécriture pour l'action newPassword avec token
+RewriteRule ^newPassword/([^/]+)$ /?action=newPassword&token=$1 [L]
+
+# Réécriture pour l'action newPassword avec token
+RewriteRule ^validationemail/([^/]+)$ /?action=validationemail&token=$1 [L]
+
+# Réécriture pour déconnexion
+RewriteRule ^logout$ /?action=logout [L]
+
+#Réécriture pour tout le reste vers index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+</IfModule>
+
+# Réécriture pour la page 404
+ErrorDocument 404 /?action=handle404
+

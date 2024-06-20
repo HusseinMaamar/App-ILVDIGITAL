@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "purifycss": "purifycss --config purifycss.config.js"
+  },
+  "dependencies": {
+    "purify-css": "^1.2.5"
+  }
+}

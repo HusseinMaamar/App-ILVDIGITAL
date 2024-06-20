@@ -1,6 +1,0 @@
-<FilesMatch "^">
-    AuthType Basic
-    AuthName "Restricted Area"
-    AuthUserFile "C:/xampp/htdocs/Protfoliopourtous/tests/.htpasswd"
-    Require valid-user
-</FilesMatch>

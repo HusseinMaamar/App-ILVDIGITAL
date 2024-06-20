@@ -1,3 +1,20 @@
-echo "config.json" >> .gitignore
-echo "*.env" >> .gitignore
-echo "node_modules/" >> .gitignore
+# Ignorer les fichiers de configuration
+config.json
+*.env
+
+# Ignorer les répertoires spécifiques
+config/
+__archive/
+tests/
+testmails/
+node_modules/
+
+# Ignorer les fichiers log
+*.log
+
+# Ignorer les fichiers de sauvegarde
+*.bak
+
+# Ignorer les fichiers système
+.DS_Store
+Thumbs.db
